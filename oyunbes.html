@@ -1,0 +1,231 @@
+
+<!doctype html>
+<html>
+ <head>
+  <title>Matematik Egzersizi</title>
+  <link rel="stylesheet" href="oyunbes.css">
+ </head>
+ <body>
+
+  <h2>Matematik Egzersizi</h2>
+  
+<p id="timer">1:00</p>
+<button id="startButton" onclick="startGame();">BAŞLA</button><br>
+
+<p id="feedback"></p>
+
+
+<div id="container">
+
+<div id="firstValue"> </div>
+<div id="buttons"><button id="buttonLess" onclick="checkAnswer('less')" disabled>&lt</button> <button id="buttonEqual" onclick="checkAnswer('equal')" disabled>=</button>
+<button id="buttonGreater" onclick="checkAnswer('greater')" disabled>&gt</button> </div>
+<div id="secondValue"> </div>
+</div>
+
+
+  <script>
+      var time;
+var countingdown;
+var timer = document.getElementById(
+ "timer");
+var solution;
+var totalCorrectAnswers = 0;
+var totalWrongAnswers = 0;
+var level = 1;
+var firstValueOutput = document
+ .getElementById("firstValue");
+var secondValueOutput = document
+ .getElementById("secondValue");
+var feedbackOutput = document
+ .getElementById("feedback");
+var lessButton = document
+ .getElementById("buttonLess");
+var equalButton = document
+ .getElementById("buttonEqual");
+var greaterButton = document
+ .getElementById("buttonGreater");
+
+/*******************/
+
+function countdown() { 
+ if (time % 60 < 10) {
+  timer.innerHTML = Math.floor(time /
+   60) + ":0" + (time % 60);
+ } else {
+  timer.innerHTML = Math.floor(time /
+   60) + ":" + (time % 60);
+ }
+ if (time <= 0) {
+  timer.innerHTML = "0:00";
+  feedbackOutput.innerHTML =
+   "OYUN BİTTİ <br> Doğru Cevap: " +
+   totalCorrectAnswers +
+   "<br> Yanlış Cevap: " +
+   totalWrongAnswers;
+  lessButton.disabled = true;
+  equalButton.disabled = true;
+  greaterButton.disabled = true;
+ }
+ time--;
+}
+
+/*******************/
+
+function startGame() {
+ clearInterval(countingdown);
+ time = 60;
+ countingdown = setInterval(
+  countdown,
+  1000);
+ document.getElementById(
+   "startButton")
+  .innerHTML = "Tekrar Başla";
+ feedbackOutput.innerHTML =
+  "Yeni Oyun Başladı";
+ level = 1;
+ totalCorrectAnswers = 0;
+ totalWrongAnswers = 0;
+ lessButton.disabled = false;
+ equalButton.disabled = false;
+ greaterButton.disabled = false;
+ createProblem(1);
+}
+
+
+//************//
+
+function findDivisor(x) {
+
+ let testing = x - 1;
+ while (x % testing !== 0) {
+  testing--;
+ }
+ return testing;
+}
+
+//************//
+
+function integerToExpression(number,
+ difficulty) {
+ let randomizer = Math
+.random(); 
+ let randomValue = Math.round(Math
+  .random() * (10 ** difficulty)
+  ); 
+ if (randomizer < 0.2) {
+  return number;
+ } else if (randomizer < 0.4) {
+  return (number - randomValue) +
+   "+" +
+   randomValue;
+ } else if (randomizer < 0.6) {
+  return (number + randomValue) +
+   "-" +
+   randomValue;
+ } else if (randomizer < 0.8) {
+  if (randomValue === 0) {
+   randomValue++;
+  }
+  return (number * randomValue) +
+   "÷" +
+   randomValue;
+ } else {
+  if (number % randomValue !== 0) {
+   randomValue = findDivisor(number);
+  }
+  return randomValue + "x" + (
+   number /
+   randomValue);
+ }
+
+}
+
+//************//
+
+function pickCorrectAnswer() {
+ let solutionRandomizer = Math.floor(
+  Math.random() * 100);
+
+ if (solutionRandomizer < 33) {
+  return "less";
+ } else if (solutionRandomizer <
+  66) {
+  return "equal";
+ } else {
+  return "greater";
+ }
+}
+
+//************//
+
+function createProblem(difficulty) {
+
+ let value = Math.floor(Math
+ .random() * (10 ** difficulty));
+
+ solution = pickCorrectAnswer();
+
+ let modifier = Math.floor(Math
+  .random() * 10);
+
+ if (modifier === 0) {
+  modifier++;
+ }
+
+ switch (solution) {
+  case "less":
+   firstValueOutput.innerHTML =
+    integerToExpression(value,
+     difficulty);
+
+   secondValueOutput.innerHTML =
+    integerToExpression(value +
+     modifier, difficulty);
+   break;
+
+  case "equal":
+   firstValueOutput.innerHTML =
+    integerToExpression(value,
+     difficulty);
+   secondValueOutput.innerHTML =
+    integerToExpression(value,
+     difficulty);
+   break;
+
+  case "greater":
+   firstValueOutput.innerHTML =
+    integerToExpression(value,
+     difficulty);
+
+   secondValueOutput.innerHTML =
+    integerToExpression(value -
+     modifier, difficulty);
+ }
+
+}
+
+//************//
+
+function checkAnswer(givenAnswer) {
+
+ if (givenAnswer === solution) {
+  feedbackOutput.innerHTML =
+   "DOĞRU! +2s";
+  time += 2;
+  totalCorrectAnswers++;
+  level += 0.05;
+ } else {
+  feedbackOutput.innerHTML =
+   "YANLIŞ! -5s";
+  time -= 5;
+  totalWrongAnswers++;
+  level -= 0.05;
+ }
+ createProblem(level);
+}
+  </script>
+  
+  
+ </body>
+</html>

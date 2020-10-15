@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+        <title>Maths Game</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+        <link rel="stylesheet"type="text/css" href="newstyle.css" >
+    </head>
+
+    <body>
+    
+        <section>
+        <h1>Başarılar!</h1>
+        <div class="centerdiv">
+            <div class="insertBox">
+            <div class="box1">
+            <input type="text" id="v1">
+            
+            </div>
+            <div class="box1">
+            <p>+</p>
+            
+            </div>
+            <div class="box1">
+            <input type="text" id="v2">
+            
+            </div>
+            </div>
+
+
+            <div class="middleBox"></div>
+            <input type="text" id="answ">
+             <div class="sentBox">
+             <button onclick="JsGame()">Cevapla</button>
+            </div>
+        </div>
+        </section>
+            <script>
+            let n1=Math.floor(Math.random()*10+1);
+            let n2=Math.floor(Math.random()*10+1);
+            document.getElementById('v1').value=n1;
+            document.getElementById('v2').value=n2;
+
+            let ans=n1+n2;
+            const JsGame=()=>{
+                var usera = document.getElementById('answ').value;
+
+                if(usera == ans){
+                    alert("Doğru Cevap!")
+                }
+                else{
+                    alert("Doğru Cevap "+ ans + "Tekrar Dene!")
+                }
+                 n1=Math.floor(Math.random()*10+1);
+                 n2=Math.floor(Math.random()*10+1);
+                document.getElementById('v1').value=n1;
+                document.getElementById('v2').value=n2;
+
+             ans=n1+n2;
+            }
+            </script>
+    </body>
+</html>

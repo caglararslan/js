@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+        <title>Çarpma İşlemi</title>
+
+        <link rel="stylesheet" href="oyun3.css" />
+        <script src="oyun3.js"></script>
+    </head>
+
+    <body>
+        <main>
+            <div id="container">
+                <p id="message" class="structure-elements"></p>
+                <aside id="score" class="structure-elements"><font face= 'Pangolin', cursive; size="5" color="#ffffff"> Skor:</font><span>00</span></aside>
+
+                <div id="calculation">
+                    <section id="question" class="structure-elements"></section>
+                    <p id="instruction" class="structure-elements"><font face= 'Pangolin', cursive; size="8" color="#ffffff"> Doğru Cevabı Bul! </font></p>
+                    <ul id="choices" class="structure-elements">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+                <button id="start-reset" class="structure-elements"><font face= 'Pangolin', cursive; size="5" color="#ffffff"> Başla</font></button>
+
+                <aside id="time-remaining" class="structure-elements">Kalan Süre: <span>60</span> saniye</aside>
+            </div>
+
+            <div id="game-over" class="structure-elements">
+                <p>Oyun Bitti!</p>
+                <p>Toplam Skor: <span>00</span>.</p>
+            </div>
+        </main>
+
+        
+    </body>
+</html>

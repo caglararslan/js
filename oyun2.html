@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Karşılaştırma İşlemleri</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script src="oyun2.js"></script>
+         <link rel="stylesheet" type="text/css" href="oyun2.css" />
+         <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    
+  
+  
+  <p id="overplace"><font face= 'Pangolin', cursive; size="40" color="#ffffff">Toplam Kalan Süre:<span id="overallt"></span> </font></p>
+  
+  
+  
+    <div id="posit_lev">
+  
+    <span><font face= 'Pangolin', cursive; size="40" color="#ffffff">Seviyeni Seç! </font></span>  
+ 
+    <div id="level1" onclick="levels=1,start(),start1(),vis(),time(),timeout()"><div>Level 1<br>Kolay</div> 
+    </div> 
+     
+    <div id="level2" onclick="levels=2,start(),start1(),vis(),time(),timeout()"><div>Level 2<br>Normal</div>
+    </div>
+  
+    </div>
+    
+  
+
+    <section>
+   <font face= 'Pangolin', cursive; size="4" color="#ffffff">Zaman:</font><span id="timer"></span>
+    </section>
+    
+  
+
+    <aside>
+    <div><font face= 'Pangolin', cursive; size="4" color="#ffffff">Doğru:</font><span id="demo">0
+    </span></div>
+    <div><font face= 'Pangolin', cursive; size="4" color="#ffffff">Yanlış:</font>
+    <span id="demo1">0</span></div>
+    </aside> 
+
+   
+   
+        <div id="posit">        
+        <span id="que"><font face= 'Pangolin', cursive; size="6" color="#ffffff">Doğru Cevap Hangisi?</font></span>       
+        
+        <div id="rannum">x</div>       
+        <p>?</p>        
+        <div id="rannum1">y</div>        
+        <div id="res1" onclick="rev1(),i=6,start(),start1()"><div>></div></div>        
+        <div id="res2" onclick="rev2(), i=6,start(),start1()"><div>=</div></div>        
+        <div id="res3" onclick="rev3(), i=6,start(),start1()"><div><</div></div>
+    </div> 
+    
+    
+    
+    <div id="stats">
+    <p id="st">Sonuçlar</p>
+    <p>Doğru:<span id="tr"></span></p>
+    <p>Yanlış:<span id="fal"></span></p>
+    <p>Toplam:<span id="ansum"></span></p>
+    <p>Doğru Cevap Yüzdesi:<span id="tr1"></span>%</p>
+    <p>Yanlış Cevap Yüzdesi:<span id="fal1"></span>%</p>
+    <p>Ortalama Cevap:<span id="avg"></span></p>
+    </div>
+    
+    </body>
+</html>

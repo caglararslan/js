@@ -1,0 +1,41 @@
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+
+body{position:absolute;width:100%;height:100%;background-color:#003300;color:rgb(204,255,255);font-family:"Verdana";background-image: url('https://img4.goodfon.com/original/1920x1200/3/f0/multfilm-shou-simpsons-personazh-20th-century-fox-art-risu-1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
+
+#posit_lev{position:absolute;width:60%;height:30%;top:30%;left:20%;text-align:center;}
+
+#level1, #level2{position:absolute;width:40%;height:30%;top:40%;border:4px dashed white}
+#level1 div,#level2 div{margin:5%}
+#level2{right:0%;}
+
+aside{position:absolute;width:30%;height:15%;right:0%;visibility:hidden;}
+aside div{margin:10%;}
+
+#overplace{position:absolute;top:5%;left:5%;visibility:hidden;}
+
+#posit{position:absolute;width:60%;height:30%;top:30%;left:20%;text-align:center;visibility:hidden;}
+#que{text-decoration:underline ;}
+#posit p{position:absolute ;font-size:1.8em;top:20%;left:47%;}
+#posit span{margin:0%}
+#rannum,#rannum1{position:absolute;width:25%;height:35%;top:20%;font-size:1.8em;}
+#rannum1{right:0%;}
+
+#res1,#res2,#res3{position:absolute ; width:25%;height:35%;top:60%;font-size:1.8em;border:1px solid rgb(8, 8, 8)}
+
+#res2{right:37.5%;}
+#res1{left:0%;}
+#res3{right:0%;}
+
+#res1 div,#res2 div,#res3 div{margin-top:20%;}
+
+
+section{position:absolute;top:70%;left:42%;visibility:hidden;}
+
+#stats{position:absolute;width:48%;height:55%;top:30%;left:26%;border:3px double white;visibility:hidden;}
+#stats p{margin:5%;}
+#stats #st{text-align:center}
